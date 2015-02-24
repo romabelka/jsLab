@@ -13,7 +13,7 @@ gulp.task('less', function () {
 });
 
 gulp.task('browserify', function() {
-    return gulp.src('./tmp/roma.js')
+    return gulp.src('./app/main.js')
         .pipe(plumber())
         .pipe(browserify({
                 extensions: ['.js'],
