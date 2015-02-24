@@ -1,0 +1,30 @@
+{
+  "name": "trainApp",
+  "version": "1.0.0",
+  "description": "React + Bacon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/romabelka/jsLab.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romabelka/jsLab/issues"
+  },
+  "homepage": "https://github.com/romabelka/jsLab",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "browserify": "^6.3.3",
+    "gulp": "^3.8.10",
+    "gulp-browserify": "^0.5.0",
+    "gulp-less": "^3.0.0",
+    "gulp-plumber": "^0.6.6",
+    "gulp-react": "^2.0.0",
+    "react": "^0.12.2",
+    "react-draggable2": "^0.4.2"
+  }
+}
