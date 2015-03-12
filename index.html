@@ -6,16 +6,36 @@
     <script src="bower_components/react/react-with-addons.js"></script>
     <script src="node_modules/react-draggable2/dist/react-draggable.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery-mockjax/jquery.mockjax.js"></script>
     <script src="bower_components/bacon/dist/Bacon.js"></script>
 
-
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="build/style.css">
 </head>
 <body>
+<div class="container">
+    <h1>Some test page</h1>
 
-<div id="container"></div>
+    <div class="row">
+        <div class="col-md-12 h3" id="response">
+            Waiting for some response from server
+        </div>
+    </div>
+    <button value="first">Go, press this Button</button>
+    <button value="second">Or, maybe this</button>
+    <button value="third">No-no, choose this one</button>
+    <div class="row">
+        <div class="col-md-4">Some interesting text</div>
+        <div class="col-md-4"><img src="assets/images/images.jpeg" width="300px"/></div>
+        <div class="col-md-4">Lorem Ipsum!</div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"><img src="assets/images/it-hero-part1.jpg" width="300px"/></div>
+        <div class="col-md-4">Bla-Bla-Bla</div>
+        <div class="col-md-4"><img src="assets/images/it_2.jpg" width="300px"></div>
+    </div>
+
+</div>
 <script src="build/main.js"></script>
-<input type="text" id="myInp">
-
 </body>
 </html>
