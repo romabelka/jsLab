@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Shower Presentation Engine</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body class="list">
+<header class="caption">
+	<h1>Роман Якобчук</h1>
+
+	<p>Flux в стилі FRP: єднаємо React і Bacon</p>
+</header>
+<section class="slide cover" id="Cover">
+	<div>
+		<h2>Flux в стилі FRP: єднаємо React і Bacon</h2>
+
+		<p><a href="http://roma.if.ua">Роман Якобчук</a></p>
+		<img src="pictures/Razmashistyj-vodopad-3176.jpg" alt="">
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>React</h2>
+		<ol>
+			<li>Модна, трендова технологія</li>
+			<li>Абстрагує від роботи з DOM</li>
+			<li>Неймовірно швидка</li>
+			<li>легка в розумінні</li>
+			<li class="next"><b>Але це лише View</b></li>
+		</ol>
+		<!--
+                <p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
+        -->
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>Flux</h2>
+		<table class="simple-table">
+			<tr>
+				<td>
+					<div class="arrow"><img src="pictures/arrow.png" alt=""/></div>
+				</td>
+				<td>
+					<div class="roundBox">View</div>
+				</td>
+				<td>
+					<div class="arrow arrow_left"><img src="pictures/arrow.png" alt=""/></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="roundBox">Action</div>
+				</td>
+				<td></td>
+				<td>
+					<div class="roundBox">Store</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="arrow arrow_right"><img src="pictures/arrow.png" alt=""/></div>
+				</td>
+				<td>
+					<div class="roundBox">Dispatcher</div>
+				</td>
+				<td><div class="arrow arrow_up"><img src="pictures/arrow.png" alt=""/></div></td>
+	</tr>
+	</table>
+	</div>
+</section>
+
+<section class="slide">
+	<div>
+		<h2>Що використаємо?</h2>
+		<table>
+			<tr>
+				<th scope="col"></th>
+				<td class="pattern">MVC</td>
+				<td class="pattern">FRP</td>
+			</tr>
+			<tr>
+				<td>Популярно</td>
+				<td class="pattern">+</td>
+				<td class="pattern">-</td>
+			</tr>
+			<tr>
+				<td>Зручна робота з данними</td>
+				<td class="pattern">+</td>
+				<td class="pattern">-</td>
+			</tr>
+			<tr>
+				<td>Масштабуємо</td>
+				<td class="pattern">+</td>
+				<td class="pattern">+</td>
+			</tr>
+			<tr class="next">
+				<td>Асинхронність</td>
+				<td class="pattern">-</td>
+				<td class="pattern">+</td>
+			</tr>
+			<tr class="next">
+				<td>Автоматичне оновлення залежностей</td>
+				<td class="pattern">-</td>
+				<td class="pattern">+</td>
+			</tr>
+		</table>
+	</div>
+</section>
+
+<section class="slide">
+	<div>
+		<table class="simple-table">
+			<tr>
+				<td>
+					<div class="arrow"><img src="pictures/arrow.png" alt=""/></div>
+				</td>
+				<td>
+					<div class="roundBox">View</div>
+				</td>
+				<td>
+					<div class="arrow arrow_left"><img src="pictures/arrow.png" alt=""/></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="roundBox">Action</div>
+				</td>
+				<td></td>
+				<td>
+					<div class="roundBox flux-mvc">
+						<p>MVC</p>
+						Store
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="arrow arrow_right"><img src="pictures/arrow.png" alt=""/></div>
+				</td>
+				<td>
+					<div class="roundBox flux-frp">
+						<p>FRP</p>
+						Dispatcher
+					</div>
+				</td>
+				<td>
+					<div class="arrow arrow_up"><img src="pictures/arrow.png" alt=""/></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</section>
+
+<section class="slide">
+	<div>
+		<h2>Коли використовувати FRP</h2>
+		<ul>
+			<li class="next">Якщо у вас багато залежностей</li>
+			<li class="next">Якщо є декілька джерел надходження сигналів</li>
+			<li class="next">Якщо у вас є жорстка асинхронність
+				<p class="small">Event -> Promise -> Observable</p>
+			</li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>Що треба пам'ятати про FRP</h2>
+		<ul>
+			<li class="next">Все зберігається в стрімах</li>
+			<li class="next">Все іммутабульно</li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>Бібліотеки JS</h2>
+		<ul>
+			<li><a href="https://baconjs.github.io">Bacon.js</a></li>
+			<li><a href="https://github.com/Reactive-Extensions/RxJS">RxJS</a></li>
+			<li><a href="https://github.com/pozadi/kefir">Kefir.js</a></li>
+			<li><a href="http://www.scala-js.org ">Scala.js</a></li>
+		</ul>
+	</div>
+</section>
+
+<section class="slide">
+	<div>
+		<h2>Code Samples</h2>
+		<pre>
+			<code>var targetText = Bacon</code>
+			<code class="next">   .fromEventTarget(document, 'mousemove')</code>
+			<code class="next">   .filter(targetContainsText)</code>
+			<code class="next">   .map(getTextFromEvent)</code>
+			<code class="next">   .skipDuplicates();</code>
+		</pre>
+	</div>
+</section>
+
+<div class="progress">
+	<div></div>
+</div>
+<script src="node_modules/shower-core/shower.min.js"></script>
+</body>
+</html>
