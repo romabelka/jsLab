@@ -7,18 +7,16 @@ $(function () {
         .fromEventTarget(document, 'mousemove')
         .filter(targetContainsText)
         .map(getTextFromEvent)
-        //А можна й так, Бекон викличе ці методи на об'єкті події:
-        //.map('.target.textContent')
         .skipDuplicates();
+    //А можна й так, Бекон викличе ці методи на об'єкті події:
+    //.map('.target.textContent')
     //А от і приклад: asEventStream - метод, який Bacon додає jQuery колекціям
     var buttonPresses = buttons.asEventStream('click')
         .map(processButtonClick);
 
     var responses = targetText.merge(buttonPresses).flatMapLatest(postText);
 
-    responses.onValue(function(response) {
-        element.innerHTML = response
-    })
+    responses.onValue(processResponse)
 });
 
 function postText(text) {
@@ -41,4 +39,7 @@ function getTextFromEvent(ev) {
 }
 function processButtonClick(ev) {
     return 'Our dear user has clicked the ' + ev.currentTarget.value + ' button'
+}
+function processResponse(response) {
+    element.innerHTML = response
 }

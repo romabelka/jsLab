@@ -40,7 +40,7 @@
 <section class="slide">
 	<div>
 		<h2>Flux</h2>
-		<table class="simple-table">
+		<table class="table-simple">
 			<tr>
 				<td>
 					<div class="arrow"><img src="pictures/arrow.png" alt=""/></div>
@@ -114,7 +114,7 @@
 
 <section class="slide">
 	<div>
-		<table class="simple-table">
+		<table class="table-simple">
 			<tr>
 				<td>
 					<div class="arrow"><img src="pictures/arrow.png" alt=""/></div>
@@ -193,13 +193,121 @@
 	<div>
 		<h2>Code Samples</h2>
 		<pre>
-			<code>var targetText = Bacon</code>
-			<code class="next">   .fromEventTarget(document, 'mousemove')</code>
-			<code class="next">   .filter(targetContainsText)</code>
-			<code class="next">   .map(getTextFromEvent)</code>
+			<code><span class="reg">var</span> targetText = <span class="var">Bacon</span></code>
+			<code class="next">   .fromEventTarget(<span class="reg">document</span>, <span class="str">'mousemove'</span>)</code>
+			<code class="next">   .filter(<span class="var">targetContainsText</span>)</code>
+			<code class="next">   .map(<span class="var">getTextFromEvent</span>)</code>
 			<code class="next">   .skipDuplicates();</code>
 		</pre>
 	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>Асинхронність</h2>
+        <p class="next">Чи відноситься остання відповідь до останнього запиту?</p>
+		<pre>
+			<code class="next"><span class="reg">var</span> responses = <span class="var">targetText</span></code>
+			<code class="next">    .flatMapLatest(<span class="var">postText</span>);</code>
+			<code class="next"><span class="var">responses</span>.onValue(<span class="var">processResponse</span>);</code>
+		</pre>
+	</div>
+</section>
+
+<section class="slide">
+	<div>
+		<h2>Додаємо джерело подій</h2>
+		<pre>
+			<code class="next"><span class="reg">var</span> buttonPresses = <span class="var">buttons</span></code>
+			<code class="next">    .asEventStream(<span class="str">'click'</span>)</code>
+			<code class="next">    .map(<span class="var">processButtonClick</span>);</code>
+			<code class="next"><span class="reg">var</span> responses = <span class="var">targetText</span></code>
+			<code class="next">    .merge(<span class="var">buttonPresses</span>)</code>
+			<code class="next">    .flatMapLatest(<span class="var">postText</span>);</code>
+		</pre>
+	</div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>React</h2>
+        <table class="table-centre">
+            <tr>
+                <td>Props</td>
+                <td>State</td>
+            </tr>
+            <tr>
+                <td><img src="pictures/tree.jpg" alt=""/></td>
+                <td>поточний стан компонента</td>
+            </tr>
+        </table>
+        <figure>
+            <blockquote>
+                <p>“Every time your data changes, it’s like hitting refresh in a server rendered app.”</p>
+            </blockquote>
+            <figcaption>Pete Hunt, Facebook</figcaption>
+        </figure>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Data Flow</h2>
+        <ul>
+            <li>Проблеми старого плеєра</li>
+            <li>Неаявний стан</li>
+            <li>Вибір технології</li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Архітектура Бандури</h2>
+        <h3>View</h3>
+        <ul>
+            <li>Сам плеєр</li>
+            <li class="next">Progress-bar</li>
+            <li class="next">Volume-bar</li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Архітектура Бандури</h2>
+        <h3>Action</h3>
+        <ul>
+            <li>UI</li>
+            <li>Внутрішні івенти(елементи логіки)</li>
+            <li>Обогртка для розробників</li>
+            <li>Дистанційне керуваня(веб-сокет)</li>
+            <li>Пряме підключення до стрімів</li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Dispatcher/Store</h2>
+        <pre>
+            <code><span class="var">dispatcherAPI</span> =</code>
+            <code>    collections : <span class="reg">new</span> Bacon.Bus()</code>
+            <code>    ...</code>
+            <code>#------------- </code>
+            <code><span class="var">playlistsCollection</span> = <span class="var">collections</span></code>
+            <code>    .scan(<span class="reg">new</span> PLCollection(), (<span class="var">collection, ev</span>) -></code>
+            <code>        <span class="var">collection</span>[<span class="var">ev</span>.action](<span class="var">ev</span>.playlist)</code>
+            <code>        ...</code>
+        </pre>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Оновлюємо View</h2>
+        <pre>
+            <code><span class="var">playlistsCollection</span>.onValue (<span class="var">PLC</span>) -></code>
+            <code>    <span class="var">UI</span>.player.setProps PLCollection: <span class="var">PLC</span></code>
+            <code>    <span class="var">UI</span>.progressbar.setProps currentTrack: ...</code>
+        </pre>
+    </div>
 </section>
 
 <div class="progress">

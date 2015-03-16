@@ -30,3 +30,6 @@ bower_components
 
 tmp
 build
+
+presentation/bower_components
+presentation/node_modules
