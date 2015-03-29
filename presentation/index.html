@@ -29,7 +29,7 @@
 			<li>Модна, трендова технологія</li>
 			<li>Абстрагує від роботи з DOM</li>
 			<li>Неймовірно швидка</li>
-			<li>легка в розумінні</li>
+			<li>Легка в розумінні</li>
 			<li class="next"><b>Але це лише View</b></li>
 		</ol>
 	</div>
@@ -155,13 +155,21 @@
 
 <section class="slide">
 	<div>
+		<h2>Коли НЕ використовувати FRP</h2>
+		<ul>
+			<li class="next">ви працюєте з данними що рідко змінюються</li>
+			<li class="next">в команді не нема кому підтримувати</li>
+			<li class="next">це явний оверхед</li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div>
 		<h2>Коли використовувати FRP</h2>
 		<ul>
-			<li class="next">Якщо у вас багато залежностей</li>
-			<li class="next">Якщо є декілька джерел надходження сигналів</li>
-			<li class="next">Якщо у вас є жорстка асинхронність
-				<p class="small">Event -> Promise -> Observable</p>
-			</li>
+			<li class="next">багато залежних станів</li>
+			<li class="next">є декілька джерел надходження сигналів</li>
+			<li class="next">є жорстка асинхронність</li>
 		</ul>
 	</div>
 </section>
@@ -170,7 +178,7 @@
 		<h2>Що треба пам'ятати про FRP</h2>
 		<ul>
 			<li class="next">Все зберігається в стрімах</li>
-			<li class="next">Все іммутабульно</li>
+			<li class="next">Все іммутабельно</li>
 		</ul>
 	</div>
 </section>
