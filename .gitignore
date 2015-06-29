@@ -33,3 +33,5 @@ build
 
 presentation/bower_components
 presentation/node_modules
+webcamp/bower_components
+webcamp/node_modules
