@@ -100,7 +100,7 @@
 </section>
 <section class="slide">
     <div>
-        <h2>Я виглядає FP код</h2>
+        <h2>Як виглядає FP код</h2>
 		<pre>
 			<code>var topAds = tests</code>
             <code>  .map(...)</code>
@@ -184,6 +184,18 @@
 
 <section class="slide">
     <div>
+        <h2>Де результат?</h2>
+        <ul>
+            <li class="next">Перетворили події в данні</li>
+            <li class="next">Налаштували потоки цих данних</li>
+            <li class="next">Що б не сталось, ми завжди маємо актуальний стан</li>
+            <li class="next">Як відобразити це в нашому UI?</li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
         <h2>React</h2>
         <table class="table-centre">
             <tr>
@@ -201,16 +213,6 @@
             </blockquote>
             <figcaption>Pete Hunt, Facebook</figcaption>
         </figure>
-    </div>
-</section>
-<section class="slide">
-    <div>
-        <h2>Data Flow</h2>
-        <ul>
-            <li>Проблеми старого плеєра</li>
-            <li>Неаявний стан</li>
-            <li>Вибір технології</li>
-        </ul>
     </div>
 </section>
 <section class="slide">
@@ -275,6 +277,26 @@
                     class="str">'message'</span>, <span class="ref">...</span></code>
             <code class="next"><span class="var">controls</span>.plug(<span class="var">remoteActions</span>)</code>
         </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Це страшне слово "монада"</h2>
+        <pre>
+            <code>monad</code>
+            <code>  .map(...)</code>
+            <code>  .reduce(...)</code>
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Підозріло схоже на масив?</h2>
+        <ul>
+            <li>Так, масив це теж монада</li>
+            <li>Так, всі ці "потоки" це теж монади</li>
+            <li>Так, саме тому ви можете уявити їх як простий масив, останній елемент якого завжди зберігає актуальний стан</li>
+        </ul>
     </div>
 </section>
 <section class="slide cover">
