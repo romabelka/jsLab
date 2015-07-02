@@ -247,14 +247,13 @@
         <h2>Dispatcher/Store</h2>
         <pre>
             <code><span class="var">dispatcherAPI</span> =</code>
-            <code> collections : <span class="reg">new</span> Bacon.Bus()</code>
-            <code> ...</code>
+            <code>    collections : <span class="reg">new</span> Bacon.Bus()</code>
+            <code>    ...</code>
             <code>#------------- </code>
             <code><span class="var">playlistsCollection</span> = <span class="var">collections</span></code>
-            <code> .scan(<span class="reg">new</span> PLCollection(), (<span class="var">collection, ev</span>)
-                -></code>
-            <code> <span class="var">collection</span>[<span class="var">ev</span>.action](<span class="var">ev</span>.playlist)</code>
-            <code> ...</code>
+            <code>    .scan(<span class="reg">new</span> PLCollection(), (<span class="var">collection, ev</span>) -></code>
+            <code>        <span class="var">collection</span>[<span class="var">ev</span>.action](<span class="var">ev</span>.playlist)</code>
+            <code>        ...</code>
         </pre>
     </div>
 </section>
@@ -293,9 +292,9 @@
     <div>
         <h2>Підозріло схоже на масив?</h2>
         <ul>
-            <li>Так, масив це теж монада</li>
-            <li>Так, всі ці "потоки" це теж монади</li>
-            <li>Так, саме тому ви можете уявити їх як простий масив, останній елемент якого завжди зберігає актуальний стан</li>
+            <li class="next">Так, масив це теж монада</li>
+            <li class="next">Так, всі ці "потоки" це теж монади</li>
+            <li class="next">Так, саме тому ви можете уявити їх як простий масив, останній елемент якого завжди зберігає актуальний стан</li>
         </ul>
     </div>
 </section>
