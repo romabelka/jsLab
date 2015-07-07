@@ -16,7 +16,7 @@ $(function () {
 
     var responses = targetText.merge(buttonPresses).flatMapLatest(postText);
 
-    responses.onValue(processResponse)
+    responses.onValue(processResponse(element))
 });
 
 function postText(text) {
@@ -40,6 +40,8 @@ function getTextFromEvent(ev) {
 function processButtonClick(ev) {
     return 'Our dear user has clicked the ' + ev.currentTarget.value + ' button'
 }
-function processResponse(response) {
-    element.innerHTML = response
+function processResponse(element) {
+    return function (response) {
+        element.innerHTML = response
+    }
 }
